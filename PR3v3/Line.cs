@@ -70,7 +70,7 @@ public class Line {
         );
 
         double x22 = _length * Math.Cos(fi) + newPoint.x;
-        double y22 = _length * Math.Cos(fi) + newPoint.y;
+        double y22 = _length * Math.Sin(fi) + newPoint.y;
 
         return (x22, y22);
     }
