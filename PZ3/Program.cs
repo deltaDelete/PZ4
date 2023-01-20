@@ -1,6 +1,6 @@
 ﻿using Spectre.Console;
 
-namespace PR3v3;
+namespace PZ3;
 public class Program
 {
     public static void Main(string[] args)
@@ -92,7 +92,7 @@ public class Program
         AnsiConsole.Write(tableChanged);
     }
 
-    static void DemoMode()
+    public static void DemoMode()
     {
         var line1 = new Line(1, 2, 3, 4);
         var line2 = new Line(3, 4, 1, 2);

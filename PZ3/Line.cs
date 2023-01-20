@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PR3v3;
+namespace PZ3;
 public class Line {
     #region Fields
 
