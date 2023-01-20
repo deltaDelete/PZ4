@@ -8,15 +8,15 @@ namespace PR3v3;
 public class Line {
     #region Fields
 
-    private (int x, int y) _point1;
-    private (int x, int y) _point2;
+    private (double x, double y) _point1;
+    private (double x, double y) _point2;
     private double _length;
 
     #endregion
 
     #region Properties
 
-    public (int x, int y) Point1 {
+    public (double x, double y) Point1 {
         get => _point1;
         set {
             var newLength = Math.Sqrt(
@@ -29,7 +29,7 @@ public class Line {
             }
         }
     }
-    public (int x, int y) Point2 {
+    public (double x, double y) Point2 {
         get => _point2;
         set {
             var newLength = Math.Sqrt(
@@ -47,7 +47,7 @@ public class Line {
 
     #region Constructors
 
-    public Line((int x, int y) point1, (int x, int y) point2) {
+    public Line((double x, double y) point1, (double x, double y) point2) {
         _point1 = point1;
         _point2 = point2;
 
@@ -57,20 +57,20 @@ public class Line {
         );
     }
 
-    public Line(int x1, int y1, int x2, int y2) : this((x1, y1), (x2, y2)) { }
+    public Line(double x1, double y1, double x2, double y2) : this((x1, y1), (x2, y2)) { }
 
     #endregion
 
     #region Private methods
 
-    private (int x, int y) GetNewPoint((int x, int y) newPoint, (int x, int y) secondPoint) {
+    private (double x, double y) GetNewPoint((double x, double y) newPoint, (double x, double y) secondPoint) {
         
         var fi = Math.Atan(
             (newPoint.y - secondPoint.y) / (newPoint.x - secondPoint.x)
         );
 
-        int x22 = (int)Math.Round(_length * Math.Cos(fi) + newPoint.x, MidpointRounding.AwayFromZero);
-        int y22 = (int)Math.Round(_length * Math.Cos(fi) + newPoint.y, MidpointRounding.AwayFromZero);
+        double x22 = _length * Math.Cos(fi) + newPoint.x;
+        double y22 = _length * Math.Cos(fi) + newPoint.y;
 
         return (x22, y22);
     }
