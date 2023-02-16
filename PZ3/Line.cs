@@ -86,5 +86,10 @@ public class Line {
         );
     }
 
+    public virtual void Show() {
+        Console.WriteLine($"Точка 1:{Point1}");
+        Console.WriteLine($"Точка 2:{Point2}");
+    }
+
     #endregion
 }
