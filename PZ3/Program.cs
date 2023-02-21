@@ -7,7 +7,7 @@ public class Program
     {
         var selectedMode = AnsiConsole.Prompt(new SelectionPrompt<string>()
             .Title("[green]В каком режиме вы хотите запустить программу[/]?")
-            .AddChoices(new[] { "Интерактивный", "Демонстрационный" }));
+            .AddChoices(new[] { "Интерактивный", "Демонстрационный", "ПЗ4" }));
 
         switch (selectedMode)
         {
@@ -16,6 +16,9 @@ public class Program
                 break;
             case "Демонстрационный":
                 DemoMode();
+                break;
+            case "ПЗ4":
+                PZ4Mode();
                 break;
         }
 
@@ -129,5 +132,19 @@ public class Program
         lengthGrid.AddRow("Отрезок 2.2", length22.ToString());
         AnsiConsole.Write(new Panel(lengthGrid) { Border = BoxBorder.Rounded });
 
+    }
+
+    public static void PZ4Mode() {
+        var line1 = new Line(1, 2, 3, 4);
+        var line2 = new Line(3, 4, 1, 2);
+
+        var brokenLine = new BrokenLine(line1.Point1, line2.Point2);
+
+        AnsiConsole.MarkupLine("[blue]Отрезок 1[/]");
+        line1.Show();
+        AnsiConsole.MarkupLine("[blue]Отрезок 2[/]");
+        line2.Show();
+        AnsiConsole.MarkupLine("[blue]Ломанная[/]");
+        brokenLine.Show();
     }
 }
