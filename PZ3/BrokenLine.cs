@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PZ3;
+namespace PZ4;
 public class BrokenLine : Line {
     public BrokenLine((double x, double y) point1, (double x, double y) point2) : base(point1, point2) {
         

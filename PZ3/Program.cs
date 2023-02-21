@@ -1,6 +1,6 @@
 ﻿using Spectre.Console;
 
-namespace PZ3;
+namespace PZ4;
 public class Program
 {
     public static void Main(string[] args)
